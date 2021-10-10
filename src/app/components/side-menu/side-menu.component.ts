@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, Input, NgModule, OnInit, ViewChild } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { Observable } from 'rxjs';
+import { navigation } from 'src/app/app-navigation';
+import { SanitizeHtmlPipeModule } from 'src/app/pipes/sanitize-html.pipe';
 
 @Component({
   selector: 'app-side-menu',
@@ -12,6 +15,7 @@ export class SideMenuComponent implements OnInit {
 
   @Input() onMenu$ = new Observable<void>();
   isCloseSidebarMenu = true;
+  menuItems = navigation;
 
   constructor() {
   }
@@ -33,7 +37,9 @@ export class SideMenuComponent implements OnInit {
   declarations: [ SideMenuComponent ],
   exports: [ SideMenuComponent ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    SanitizeHtmlPipeModule
   ]
 })
 export class SideMenuModule { }

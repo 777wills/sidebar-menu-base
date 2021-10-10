@@ -52,19 +52,34 @@
 
 .sidebar-nav li {
     text-indent: 20px;
-    line-height: 40px;
+    height: 45px;
+    display: flex;
+    align-items: center;
 }
 
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
     color: var(--light-grey);
+    width: 100%;
 }
 
-.sidebar-nav li a:hover {
+.sidebar-nav li:hover {
+    background: var(--strong-grey);
+}
+
+.sidebar-nav li:hover a {
     text-decoration: none;
     color: var(--white);
+}
+
+.sidebar-nav .active {
     background: var(--strong-grey);
+}
+
+.sidebar-nav .active a {
+    text-decoration: none;
+    color: var(--white) !important;
 }
 
 .sidebar-nav li a:active,
@@ -85,6 +100,11 @@
 .sidebar-nav > .sidebar-brand a:hover {
     color: var(--white);
     background: none;
+}
+
+.container-icon {
+    display: inline;
+    margin-right: 10px;
 }
 
 @media screen and (min-width: 768px) {

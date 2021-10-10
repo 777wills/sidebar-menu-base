@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderModule } from './components/header/header.component';
-import { SideMenuModule } from './components/side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
@@ -13,8 +11,6 @@ import { SideMenuModule } from './components/side-menu/side-menu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SideMenuModule,
-    HeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

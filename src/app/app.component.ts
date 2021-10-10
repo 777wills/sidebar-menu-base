@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -7,7 +7,5 @@ import { Subject } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {  
-
-  onMenuSubject: Subject<void> = new Subject<void>();
   
 }
