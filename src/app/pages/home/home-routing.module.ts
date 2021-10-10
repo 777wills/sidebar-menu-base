@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RudolphComponent } from 'src/app/components/rudolph/rudolph.component';
-import { SantaComponent } from 'src/app/components/santa/santa.component';
-import { SnowmanComponent } from 'src/app/components/snowman/snowman.component';
-import { TreeComponent } from 'src/app/components/tree/tree.component';
+import { RudolphComponent } from 'src/app/pages/rudolph/rudolph.component';
+import { SantaComponent } from 'src/app/pages/santa/santa.component';
+import { SnowmanComponent } from 'src/app/pages/snowman/snowman.component';
+import { TreeComponent } from 'src/app/pages/tree/tree.component';
 import { HomeComponent } from './home.component';
 
 const routes: Routes = [
@@ -11,10 +11,22 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
-      { path: 'santa', component: SantaComponent },
-      { path: 'rudolph', component: RudolphComponent },
-      { path: 'snowman', component: SnowmanComponent },
-      { path: 'tree', component: TreeComponent },
+      {
+        path: 'santa',
+        loadChildren: () => import('../santa/santa.component').then(m => m.SantaModule)
+      },
+      {
+        path: 'rudolph',
+        loadChildren: () => import('../rudolph/rudolph.component').then(m => m.RudolphModule)
+      },
+      {
+        path: 'snowman',
+        loadChildren: () => import('../snowman/snowman.component').then(m => m.SnowmanModule)
+      },
+      {
+        path: 'tree',
+        loadChildren: () => import('../tree/tree.component').then(m => m.TreeModule)
+      },
       { path: '**', redirectTo: 'santa' },
     ]
   }
